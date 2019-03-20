@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "mySort.h" 
+
+int main(int argc, char * argv[])
+{
+    int data[100000]; /* Array of ints to sort */
+    int nDataItems;   /* number of actual items in the array */
+    int i, j, k;
+    k = argc - 1;
+        
+    if (argc > 1){
+	    for(j = 0; j < k; j++) {
+		    data[j] = atoi(argv[j+1]);
+	    }
+
+    mySort(data,k);
+
+    for(i = 0; i < k; i++) {
+        printf("%d\n", data[i]);
+    }
+    }
+    
+    else
+    {
+
+    /* Test data */    
+    nDataItems = 4;
+    data[0] = 40;
+    data[1] = 30;
+    data[2] = 10;
+    data[3] = 20;
+
+    mySort(data, nDataItems);
+
+    for(i = 0; i < nDataItems; i++) {
+        printf("%d\n", data[i]);
+    }
+    }    
+	    
+    /* Check that the data array is sorted. */
+    for(i = 0; i < nDataItems-1; i++) {
+	    
+        if (data[i] > data[i+1]) {
+            fprintf(stderr, "Sort error: data[%d] (= %d)"
+              " should be <= data[%d] (= %d)- -aborting\n",
+              i, data[i], i+1, data[i+1]);
+            exit(1);
+        }
+    }  
+    exit(0);
+}
