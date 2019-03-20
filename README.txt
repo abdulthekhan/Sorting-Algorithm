@@ -1,7 +1,4 @@
-Lab 1 README File
-Name: Krist Kalami
-Last Updated: January 18, 2017
-Student Number: 500568445
+
 
 IMPORTANT NOTES:
 *******MAKE SURE YOU RUN testSort2 PROGRAM**********
